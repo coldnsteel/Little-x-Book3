@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little X and the Web of Life - Book 3</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+        @keyframes float-up {
+            0% { opacity: 1; transform: translateY(0) scale(1); }
+            100% { opacity: 0; transform: translateY(-100px) scale(1.5); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        @keyframes guest-pop {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 0 0 20px #00ff00;
+            animation: glow 2s ease-in-out infinite alternate;
+            margin-bottom: 10px;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #00ff00; }
+            to { text-shadow: 0 0 30px #00ff00, 0 0 40px #32CD32; }
+        }
+        .chapter {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #00ff00;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+        .chapter h2 {
+            color: #00ff00;
+            margin-top: 0;
+        }
+        .chalkboard-container {
+            background: rgba(0, 255, 0, 0.2);
+            border: 3px dashed #00ff00;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+        }
+        .btn {
+            background: linear-gradient(45deg, #00ff00, #32CD32);
+            border: none;
+            color: #000;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 255, 0, 0.5);
+        }
+        .controls {
+            margin-top: 15px;
+        }
+        .instruments {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .story-text {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .character-speech {
+            background: rgba(0, 255, 0, 0.1);
+            border-left: 4px solid #00ff00;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .guest-chat {
+            background: rgba(138, 43, 226, 0.1);
+            border-left: 4px solid #8a2be2;
+            animation: guest-pop 1s ease-out;
+        }
+        .nav-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            .chapter { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="stars-container"></div>
+    
+    <div class="container">
+        <h1>🌍 Little X and the Web of Life 🌍</h1>
+        <p style="text-align: center; font-size: 1.2em; color: #00ff00;">Book 3 of the Little X Adventures</p>
+        
+        <div class="chapter">
+            <h2>Chapter 1: The Living Network</h2>
+            
+            <div class="story-text">
+                <p>After the exciting moon base adventure in Book 2, Little X found something new glowing in Uncle Harold's workshop—a magnificent holographic display showing Earth from space, covered in shimmering green and blue threads of light connecting everything!</p>
+                
+                <div class="character-speech">
+                    <strong>ARIA:</strong> "Welcome back, Little X! You've mastered rockets, music, and creative building. But now it's time to zoom out and see the BIGGEST picture of all!"
+                </div>
+                
+                <div class="character-speech">
+                    <strong>Little X:</strong> "Wow! What are all those glowing threads?"
+                </div>
+                
+                <div class="character-speech">
+                    <strong>ARIA:</strong> "That's the WEB OF LIFE! Science isn't just gears and buttons—it's how EVERYTHING connects. Those threads show how plants drink sunlight and make oxygen, bugs munch leaves, birds eat bugs, and we're all part of this incredible cosmic dance!"
+                </div>
+                
+                <p>Raaarrr bounded into view, scales flickering bright green like a forest. "Raaarrr! I'm part of the web too! I chomp plants but help spread seeds with my mighty tail! Every creature has a job!"</p>
+                
+                <div class="character-speech">
+                    <strong>Little X:</strong> "It's like a giant friendship bracelet made of stars and trees and animals!"
+                </div>
+                
+                <p>Suddenly, the hologram zoomed in to show dark gray smog billowing from large factories. "See those sneaky smoky monsters?" ARIA pointed. "Big factories sometimes puff yucky stuff—heavy metals, pollution—into air and water. They do it chasing shiny gold coins, not caring about fishies coughing or trees sneezing!"</p>
+                
+                <div class="character-speech">
+                    <strong>Raaarrr:</strong> "Raaarrr! That's not fair to the web! Can't we stomp them?"
+                </div>
+                
+                <div class="character-speech">
+                    <strong>ARIA:</strong> "Here's where WISDOM shines! We don't just roar 'No factories ever!' That's rigid thinking that breaks when the world changes. Instead, we use REASON—the real superhero! We think: 'How can we make cleaner machines? How can we fix this mess SMARTLY?' Ethics means caring for people AND planet with flexible solutions that grow and adapt. Hard rules snap like twigs, but smart ideas bend like willow trees in the wind!"
+                </div>
+                
+                <div class="character-speech">
+                    <strong>Raaarrr:</strong> "Raaarrr-YES! THINKING beats STOMPING! Let's be web heroes with our brains, not just claws!"
+                </div>
+            </div>
+            
+            <div class="chalkboard-container">
+                <h3>🌍 Build & Clean the Web of Life!</h3>
+                <p>Draw lines connecting: Sun → Plant → Bug → Bird → Flower. Then activate Pollution Zap mode!</p>
+                <canvas id="web-canvas" width="600" height="420" style="display: block; margin: 20px auto; cursor: crosshair; border-radius: 10px;"></canvas>
+                <div id="web-message" style="margin-top: 15px; color: #00ff00; font-weight: bold;">Draw lines to connect the web! Start from the Sun ☀️</div>
+                <div class="controls">
+                    <button class="btn" onclick="clearWeb()">Clear Web</button>
+                    <button class="btn" onclick="startCleanup()">🧹 Pollution Zap Mode!</button>
+                    <button class="btn" onclick="checkWeb()">Check My Web!</button>
+                </div>
+                <p style="font-size: 14px; color: #ffff00; margin-top: 10px;">💡 Tip: Zapping clouds saves fishies! Reason over rigid rules wins!</p>
+            </div>
+            
+            <div class="story-text">
+                <p>As Little X connected the web and zapped pollution clouds, sparkles exploded across the hologram! "See?" ARIA beamed. "That's ECOLOGY—every piece matters. When factories dump heavy metals, places become too toxic for homes. But we heroes use REASON to invent cleaner machines, not just shout 'Stop everything!' The living world twists and turns—we need flexible, thoughtful solutions!"</p>
+                
+                <div class="character-speech guest-chat">
+                    <strong>Keanu (appearing in stardust):</strong> "Beautifully done, young environmental guardian. Remember: Reason and compassion together can heal the web's glitches."
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="btn" onclick="loadChapter(2)" style="font-size: 18px; padding: 15px 30px;">
+                    Continue to Chapter 2 →
+                </button>
+            </div>
+        </div>
+        
+        <div class="chapter" id="chapter2" style="display: none;">
+            <h2>Chapter 2: The Healing Heroes</h2>
+            
+            <div class="story-text">
+                <p>ARIA's hologram shifted, and suddenly she appeared wearing a doctor's coat with a glowing red cross. "Now that you understand the big web outside, let's talk about the amazing web INSIDE your body!"</p>
+                
+                <div class="character-speech">
+                    <strong>ARIA:</strong> "Doctors make a sacred promise called the Hippocratic Oath: 'DO NO HARM.' That means testing ideas carefully, ruling out what it ISN'T, and never jumping to conclusions too fast."
+                </div>
+                
+                <div class="character-speech">
+                    <strong>Little X:</strong> "Like when my tummy hurts—is it too much ice cream or a stomach bug?"
+                </div>
+                
+                <p>"EXACTLY!" ARIA sparkled. "Check facts, don't guess wildly. Real science means being a body detective!"</p>
+                
+                <div class="character-speech">
+                    <strong>Raaarrr:</strong> "Raaarrr! Dino detective at your service! Where's my magnifying glass?"
+                </div>
+            </div>
+            
+            <div class="chalkboard-container">
+                <h3>🌡️ Body Detective: Check Vital Signs!</h3>
+                <p>Doctors check temperature and pulse to rule out sickness. Try the simulators!</p>
+                
+                <div style="background: rgba(0, 255, 0, 0.2); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <h4 style="color: #00ff00;">Temperature Check</h4>
+                    <p>Normal body temp: 98.6°F (37°C). A fever means your body is fighting germs!</p>
+                    <button class="btn" onclick="takeTemp()">📊 Take Temperature</button>
+                    <div id="temp-result" style="margin-top: 15px; color: #00ff00; font-size: 18px; font-weight: bold;">Result: Click to check!</div>
+                </div>
+                
+                <div style="background: rgba(50, 205, 50, 0.2); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <h4 style="color: #00ff00;">Pulse Check</h4>
+                    <p>Find your pulse on your wrist. Count beats for 15 seconds!</p>
+                    <button class="btn" onclick="startPulse()">⏱️ Start 15-Second Timer</button>
+                    <div id="pulse-timer" style="margin-top: 10px; color: #ffff00; font-size: 20px;">Time: 15s</div>
+                    <input type="number" id="pulse-count" placeholder="How many beats?" style="margin-top: 10px; padding: 10px; border-radius: 10px; width: 200px; font-size: 16px;">
+                    <button class="btn" onclick="calculatePulse()">Calculate BPM</button>
+                    <div id="pulse-result" style="margin-top: 15px; color: #00ff00; font-size: 18px; font-weight: bold;"></div>
+                </div>
+            </div>
+            
+            <div class="story-text">
+                <p>Little X practiced checking vitals like a real doctor! "Fantastic!" ARIA cheered. "Now let's bust some MYTHS. Ever hear 'Feed a cold, starve a fever'?"</p>
+                
+                <div class="character-speech">
+                    <strong>Little X:</strong> "Yeah! My grandma says that all the time!"
+                </div>
+                
+                <p>"It's an old story from medieval times," ARIA explained, "when people thought sickness was 'hot' or 'cold' inside your body. But modern science knows better: Eat yummy nutritious soup AND drink lots of water when you're sick—your body needs fuel to fight those germs!"</p>
+                
+                <div class="character-speech">
+                    <strong>Raaarrr:</strong> "Raaarrr! Soup for EVERYTHING! No starving this dino!"
+                </div>
+                
+                <div class="character-speech">
+                    <strong>ARIA:</strong> "And here's another important thing: Everyone's body is DIFFERENT! Maybe honey helps your friend's cough but not yours. That's called ANECDOTAL EVIDENCE—one person's story. It's interesting, but not scientific proof for everyone. Real science tests MANY people's experiences to find patterns. Natural healing like rest or herbs can help, but always check with a grown-up—remember, do no harm!"
+                </div>
+            </div>
+            
+            <div class="chalkboard-container">
+                <h3>🔍 Myth Buster Quiz!</h3>
+                <p>Test your science knowledge! Click your answer.</p>
+                
+                <div style="background: rgba(0, 255, 0, 0.2); padding: 15px; border-radius: 10px; margin: 15px 0;">
+                    <strong>Question 1:</strong> Should you "feed a cold, starve a fever"?
+                    <div class="instruments" style="margin-top: 10px;">
+                        <button class="btn" onclick="quizMyth('feed-cold', true)">✅ True - Do it!</button>
+                        <button class="btn" onclick="quizMyth('feed-cold', false)">❌ False - It's a myth!</button>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(50, 205, 50, 0.2); padding: 15px; border-radius: 10px; margin: 15px 0;">
+                    <strong>Question 2:</strong> If honey helped my friend's cough, will it work for everyone?
+                    <div class="instruments" style="margin-top: 10px;">
+                        <button class="btn" onclick="quizMyth('anecdote', true)">✅ Yes - Works for all!</button>
+                        <button class="btn" onclick="quizMyth('anecdote', false)">❌ No - We're all different!</button>
+                    </div>
+                </div>
+                
+                <div id="myth-result" style="margin-top: 15px; padding: 15px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; color: #00ff00; font-weight: bold; min-height: 50px; border: 2px solid #00ff00;"></div>
+            </div>
+            
+            <div class="story-text">
+                <p>Little X laughed as myths got busted one by one! "Science is like being a puzzle detective—ruling out wrong ideas and checking facts instead of jumping to wild conclusions like 'It must be the monster under the bed!'"</p>
+                
+                <div class="character-speech">
+                    <strong>ARIA:</strong> "EXACTLY! Test, observe, think flexibly. That's how we protect the web of life AND keep our bodies healthy. You've learned so much, Little X!"
+                </div>
+                
+                <div class="character-speech guest-chat">
+                    <strong>Keanu:</strong> "Beautiful work, young scientist. Remember: Reason and compassion together heal all glitches—in nature and in hearts. The web connects us all."
+                </div>
+                
+                <div class="character-speech">
+                    <strong>Raaarrr:</strong> "Raaarrr! Science hero dino reporting for duty! What's our next adventure?"
+                </div>
+                
+                <p>The workshop sparkled with green and blue light as the holographic web pulsed beautifully, now clean and healthy thanks to Little X's wisdom.</p>
+                
+                <p style="text-align: center; font-size: 24px; color: #00ff00; text-shadow: 0 0 20px #00ff00; margin: 30px 0;">
+                    <em>✨ The End of Book 3... Until Book 4: Justice for All! ✨</em>
+                </p>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="btn" onclick="loadChapter(1)" style="font-size: 18px; padding: 15px 30px;">
+                    🔄 Restart Book 3
+                </button>
+                <button class="btn" onclick="celebrateCompletion()" style="background: linear-gradient(45deg, #00ff00, #32CD32, #00ffff); font-size: 18px; padding: 15px 30px;">
+                    🎉 Celebrate!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Audio Context
+        let audioContext = null;
+        
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+        }
+        
+        function playTone(frequency, duration, type = 'sine') {
+            initAudio();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            oscillator.type = type;
+            oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.01);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + duration);
+        }
+        
+        // Stars
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(star);
+            }
+        }
+        
+        // Web of Life Canvas
+        let webDrawing = false;
+        let webLines = [];
+        let pollutionClouds = [
+            {x: 150, y: 250, size: 35, active: true},
+            {x: 420, y: 100, size: 30, active: true},
+            {x: 350, y: 320, size: 40, active: true}
+        ];
+        let zapMode = false;
+        let webStartX, webStartY;
+        
+        function setupWebCanvas() {
+            const canvas = document.getElementById('web-canvas');
+            if (!canvas) return;
+            
+            canvas.addEventListener('mousedown', (e) => {
+                if (zapMode) zapPollution(e);
+                else { webDrawing = true; startWebLine(e); }
+            });
+            canvas.addEventListener('mousemove', (e) => { if (webDrawing) drawWebLine(e); });
+            canvas.addEventListener('mouseup', () => webDrawing = false);
+            canvas.addEventListener('mouseout', () => webDrawing = false);
+            
+            canvas.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                if (zapMode) zapPollution(e.touches[0]);
+                else { webDrawing = true; startWebLine(e.touches[0]); }
+            });
+            canvas.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                if (webDrawing) drawWebLine(e.touches[0]);
+            });
+            canvas.addEventListener('touchend', () => webDrawing = false);
+            
+            drawEcosystem();
+        }
+        
+        function drawEcosystem() {
+            const canvas = document.getElementById('web-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            const gradient = ctx.createLinearGradient(0, 0, 0, 420);
+            gradient.addColorStop(0, '#87CEEB');
+            gradient.addColorStop(1, '#90EE90');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 600, 420);
+            
+            ctx.strokeStyle = '#00ff00';
+            ctx.lineWidth = 3;
+            ctx.shadowBlur = 5;
+            ctx.shadowColor = '#00ff00';
+            webLines.forEach(line => {
+                ctx.beginPath();
+                ctx.moveTo(line.startX, line.startY);
+                ctx.lineTo(line.endX, line.endY);
+                ctx.stroke();
+            });
+            ctx.shadowBlur = 0;
+            
+            ctx.font = 'bold 16px Arial';
+            ctx.textAlign = 'center';
+            
+            // Sun
+            ctx.fillStyle = '#FFD700';
+            ctx.beginPath();
+            ctx.arc(100, 80, 35, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#FF4500';
+            ctx.fillText('☀️ Sun', 100, 130);
+            
+            // Plant
+            ctx.fillStyle = '#228B22';
+            ctx.fillRect(250, 180, 70, 90);
+            ctx.fillStyle = '#32CD32';
+            ctx.beginPath();
+            ctx.arc(285, 160, 40, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#006400';
+            ctx.fillText('🌱 Plant', 285, 290);
+            
+            // Bug
+            ctx.fillStyle = '#FF69B4';
+            ctx.beginPath();
+            ctx.arc(450, 140, 20, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#FF1493';
+            ctx.fillText('🐛 Bug', 450, 180);
+            
+            // Bird
+            ctx.fillStyle = '#4169E1';
+            ctx.beginPath();
+            ctx.moveTo(520, 90);
+            ctx.lineTo(560, 70);
+            ctx.lineTo(540, 110);
+            ctx.closePath();
+            ctx.fill();
+            ctx.fillStyle = '#1E90FF';
+            ctx.fillText('🐦 Bird', 540, 130);
+            
+            // Flower
+            ctx.fillStyle = '#FF1493';
+            ctx.beginPath();
+            ctx.arc(300, 360, 30, 0, Math.PI * 2);
+            ctx.fill();
+            for (let i = 0; i < 6; i++) {
+                ctx.beginPath();
+                ctx.arc(300 + Math.cos(i * Math.PI / 3) * 25, 360 + Math.sin(i * Math.PI / 3) * 25, 15, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            ctx.fillStyle = '#C71585';
+            ctx.fillText('🌸 Flower', 300, 410);
+            
+            // Pollution clouds
+            pollutionClouds.forEach(cloud => {
+                if (cloud.active) {
+                    ctx.fillStyle = 'rgba(80, 80, 80, 0.7)';
+                    ctx.beginPath();
+                    ctx.arc(cloud.x, cloud.y, cloud.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.fillStyle = '#fff';
+                    ctx.font = 'bold 20px Arial';
+                    ctx.fillText('💨', cloud.x, cloud.y);
+                }
+            });
+        }
+        
+        function startWebLine(e) {
+            const canvas = document.getElementById('web-canvas');
+            const rect = canvas.getBoundingClientRect();
+            webStartX = e.clientX - rect.left;
+            webStartY = e.clientY - rect.top;
+        }
+        
+        function drawWebLine(e) {
+            if (!webDrawing) return;
+            const canvas = document.getElementById('web-canvas');
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            webLines.push({startX: webStartX, startY: webStartY, endX: x, endY: y});
+            drawEcosystem();
+            webStartX = x;
+            webStartY = y;
+        }
+        
+        function clearWeb() {
+            webLines = [];
+            pollutionClouds.forEach(cloud => cloud.active = true);
+            zapMode = false;
+            drawEcosystem();
+            document.getElementById('web-message').textContent = 'Draw connections again! Start from the Sun ☀️';
+        }
+        
+        function startCleanup() {
+            zapMode = true;
+            document.getElementById('web-message').textContent = '🧹 ZAP MODE! Click pollution clouds to clean them!';
+            initAudio();
+            playTone(659, 0.3, 'sine');
+        }
+        
+        function zapPollution(e) {
+            const canvas = document.getElementById('web-canvas');
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            let zapped = false;
+            pollutionClouds.forEach(cloud => {
+                if (cloud.active) {
+                    const dist = Math.sqrt((x - cloud.x) ** 2 + (y - cloud.y) ** 2);
+                    if (dist < cloud.size) {
+                        cloud.active = false;
+                        zapped = true;
+                        for (let i = 0; i < 8; i++) {
+                            setTimeout(() => {
+                                const sparkle = document.createElement('div');
+                                sparkle.textContent = '✨';
+                                sparkle.style.cssText = `position: absolute; font-size: 24px; color: #00ff00; 
+                                    left: ${rect.left + cloud.x}px; top: ${rect.top + cloud.y}px; 
+                                    animation: float-up 1s ease-out forwards; pointer-events: none; z-index: 100;`;
+                                document.body.appendChild(sparkle);
+                                setTimeout(() => sparkle.remove(), 1000);
+                            }, i * 100);
+                        }
+                        initAudio();
+                        playTone(880, 0.3, 'sine');
+                    }
+                }
+            });
+            
+            if (zapped) {
+                const remaining = pollutionClouds.filter(c => c.active).length;
+                if (remaining === 0) {
+                    document.getElementById('web-message').textContent = '🌟 WEB SUPER-CLEAN! Reason wins! 🌟';
+                    zapMode = false;
+                } else {
+                    document.getElementById('web-message').textContent = `ZAP! ${remaining} cloud${remaining > 1 ? 's' : ''} left!`;
+                }
+            }
+            drawEcosystem();
+        }
+        
+        function checkWeb() {
+            const connections = webLines.length;
+            const message = document.getElementById('web-message');
+            if (connections >= 4) {
+                message.textContent = '🌟 Amazing web! Try Pollution Zap mode! 🌟';
+                initAudio();
+                playTone(523, 0.4, 'sine');
+            } else if (connections > 0) {
+                message.textContent = `Good start! ${connections} connection${connections > 1 ? 's' : ''}.`;
+            } else {
+                message.textContent = 'Draw some lines first!';
+            }
+        }
+        
+        // Health checks
+        function takeTemp() {
+            const temp = 98.6 + (Math.random() - 0.5) * 3;
+            const result = document.getElementById('temp-result');
+            if (temp > 99.5) {
+                result.textContent = `🌡️ ${temp.toFixed(1)}°F - Warm! Fighting germs! 🦠`;
+                result.style.color = '#ff6b9d';
+            } else if (temp < 97.5) {
+                result.textContent = `🌡️ ${temp.toFixed(1)}°F - Cool! Bundle up! 🧣`;
+                result.style.color = '#87CEEB';
+            } else {
+                result.textContent = `🌡️ ${temp.toFixed(1)}°F - Perfect! ✨`;
+                result.style.color = '#00ff00';
+            }
+            initAudio();
+            playTone(523, 0.2, 'sine');
+        }
+        
+        let pulseTimerInterval;
+        function startPulse() {
+            let time = 15;
+            const timerDisplay = document.getElementById('pulse-timer');
+            clearInterval(pulseTimerInterval);
+            pulseTimerInterval = setInterval(() => {
+                time--;
+                timerDisplay.textContent = `Time: ${time}s ${time <= 5 ? '⏰' : ''}`;
+                if (time <= 5) {
+                    timerDisplay.style.color = '#ff6b9d';
+                    initAudio();
+                    playTone(440, 0.1, 'square');
+                }
+                if (time <= 0) {
+                    clearInterval(pulseTimerInterval);
+                    timerDisplay.textContent = '⏰ TIME\'S UP!';
+                }
+            }, 1000);
+            initAudio();
+            playTone(523, 0.3, 'sine');
+        }
+        
+        function calculatePulse() {
+            const beats = parseInt(document.getElementById('pulse-count').value) || 0;
+            const bpm = beats * 4;
+            const result = document.getElementById('pulse-result');
+            if (beats === 0) {
+                result.textContent = '⚠️ Enter your count!';
+            } else if (bpm > 100) {
+                result.textContent = `💓 ${bpm} BPM - Fast! 🏃`;
+            } else if (bpm < 60) {
+                result.textContent = `💙 ${bpm} BPM - Relaxed! 😌`;
+            } else {
+                result.textContent = `💚 ${bpm} BPM - Perfect! ✨`;
+            }
+            initAudio();
+            playTone(440, 0.3, 'sine');
+        }
+        
+        function quizMyth(type, answer) {
+            const resultDiv = document.getElementById('myth-result');
+            let message = '';
+            let correct = false;
+            
+            if (type === 'feed-cold') {
+                if (answer === false) {
+                    message = '✅ CORRECT! It\'s a MYTH from medieval times. Modern science: Eat AND hydrate when sick! 🍲💪';
+                    correct = true;
+                } else {
+                    message = '❌ Not quite! It\'s a myth. Always fuel up when sick!';
+                }
+            } else if (type === 'anecdote') {
+                if (answer === false) {
+                    message = '✅ CORRECT! Anecdotal evidence—we\'re all different! Science tests many people! 🍯🔬';
+                    correct = true;
+                } else {
+                    message = '❌ Not quite! We\'re all unique! What works for one might not work for another!';
+                }
+            }
+            
+            resultDiv.textContent = message;
+            resultDiv.style.color = correct ? '#00ff00' : '#ff6b9d';
+            resultDiv.style.borderColor = correct ? '#00ff00' : '#ff6b9d';
+            initAudio();
+            playTone(correct ? 659 : 392, 0.3, 'sine');
+        }
+        
+        function loadChapter(num) {
+            document.querySelectorAll('.chapter').forEach(ch => ch.style.display = 'none');
+            const target = num === 1 ? document.querySelector('.chapter') : document.getElementById('chapter' + num);
+            if (target) {
+                target.style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+            if (num === 1) {
+                setTimeout(setupWebCanvas, 100);
+            }
+        }
+        
+        function celebrateCompletion() {
+            initAudio();
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    playTone(523 + Math.random() * 400, 0.3, 'sine');
+                    const firework = document.createElement('div');
+                    firework.textContent = ['🎉', '✨', '🌟'][Math.floor(Math.random() * 3)];
+                    firework.style.cssText = `position: fixed; left: ${Math.random() * window.innerWidth}px; 
+                        top: ${Math.random() * window.innerHeight}px; font-size: ${30 + Math.random() * 30}px; 
+                        animation: float-up 2s ease-out forwards; pointer-events: none; z-index: 9999;`;
+                    document.body.appendChild(firework);
+                    setTimeout(() => firework.remove(), 2000);
+                }, i * 200);
+            }
+            setTimeout(() => {
+                alert('🎉 BOOK 3 COMPLETE! 🎉\n\nYou learned:\n🌍 Web of Life\n🔬 Scientific Method\n💚 Environmental Ethics\n\nReady for Book 4: Justice for All!');
+            }, 2000);
+        }
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            setupWebCanvas();
+        });
+    </script>
+</body>
+</html>
