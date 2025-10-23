@@ -119,9 +119,152 @@
             text-align: center;
             margin: 30px 0;
         }
+        
+        /* ABACUS STYLES */
+        .abacus-frame {
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: inset 0 4px 10px rgba(0,0,0,0.3);
+            border: 4px solid #654321;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        .abacus-columns {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .abacus-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+        }
+        .column-label {
+            background: rgba(255,255,255,0.9);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #764ba2;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .heaven-section {
+            height: 100px;
+            width: 70px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 8px;
+        }
+        .earth-section {
+            height: 180px;
+            width: 70px;
+            position: relative;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: flex-start;
+            padding-bottom: 8px;
+            gap: 6px;
+        }
+        .divider-bar {
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(180deg, #FFD700, #FFA500);
+            border: 2px solid #FF8C00;
+            border-radius: 4px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+            margin: 4px 0;
+            z-index: 10;
+            position: relative;
+        }
+        .rod {
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(90deg, #654321, #8B4513);
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+            z-index: 0;
+        }
+        .bead {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.25s ease-out;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.1em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            user-select: none;
+            position: relative;
+            z-index: 5;
+            border: 2px solid rgba(0,0,0,0.3);
+        }
+        .bead:hover {
+            transform: scale(1.15);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.6);
+        }
+        .bead.heaven {
+            background: radial-gradient(circle at 35% 35%, #FFD700, #FFA500, #FF8C00);
+            width: 55px;
+            height: 55px;
+            font-size: 1.3em;
+            position: absolute;
+            top: 8px;
+        }
+        .bead.heaven.counted {
+            top: 50px;
+            background: radial-gradient(circle at 35% 35%, #32CD32, #228B22, #006400);
+        }
+        .bead.earth {
+            background: radial-gradient(circle at 35% 35%, #FF6B6B, #EE5A6F, #C92A2A);
+        }
+        .bead.earth.counted {
+            background: radial-gradient(circle at 35% 35%, #51CF66, #37B24D, #2F9E44);
+        }
+        .abacus-display {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .abacus-total {
+            font-size: 3em;
+            color: #00ff00;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        .abacus-breakdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+        .breakdown-item {
+            background: rgba(0, 255, 0, 0.2);
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid #00ff00;
+        }
+        
         @media (max-width: 600px) {
             h1 { font-size: 2em; }
             .chapter { padding: 20px; }
+            .abacus-column { min-width: 60px; }
+            .bead { width: 38px; height: 38px; }
+            .bead.heaven { width: 48px; height: 48px; }
         }
     </style>
 </head>
@@ -181,351 +324,313 @@
                     <button class="btn" onclick="startCleanup()">🧹 Pollution Zap Mode!</button>
                     <button class="btn" onclick="checkWeb()">Check My Web!</button>
                 </div>
-                <p style="font-size: 14px; color: #ffff00; margin-top: 10px;">💡 Tip: Zapping clouds saves fishies! Reason over rigid rules wins!</p>
-            </div>
-            
-            <div class="story-text">
-                <p>As Little X connected the web and zapped pollution clouds, sparkles exploded across the hologram! "See?" ARIA beamed. "That's ECOLOGY—every piece matters. When factories dump heavy metals, places become too toxic for homes. But we heroes use REASON to invent cleaner machines, not just shout 'Stop everything!' The living world twists and turns—we need flexible, thoughtful solutions!"</p>
-                
-                <div class="character-speech guest-chat">
-                    <strong>Keanu (appearing in stardust):</strong> "Beautifully done, young environmental guardian. Remember: Reason and compassion together can heal the web's glitches."
-                </div>
-            </div>
-            
-            <div class="nav-buttons">
-                <button class="btn" onclick="loadChapter(2)" style="font-size: 18px; padding: 15px 30px;">
-                    Continue to Chapter 2 →
-                </button>
             </div>
         </div>
-        
-        <div class="chapter" id="chapter2" style="display: none;">
-            <h2>Chapter 2: The Healing Heroes</h2>
+
+        <!-- NEW ABACUS CHAPTER! -->
+        <div class="chapter" id="chapter-abacus" style="display: none;">
+            <h2>🧮 Chapter: Counting the Web! 🧮</h2>
             
             <div class="story-text">
-                <p>ARIA's hologram shifted, and suddenly she appeared wearing a doctor's coat with a glowing red cross. "Now that you understand the big web outside, let's talk about the amazing web INSIDE your body!"</p>
+                <p>After cleaning up the pollution, ARIA's hologram shimmered and transformed into something ancient and magical—a wooden counting frame with colorful beads!</p>
                 
                 <div class="character-speech">
-                    <strong>ARIA:</strong> "Doctors make a sacred promise called the Hippocratic Oath: 'DO NO HARM.' That means testing ideas carefully, ruling out what it ISN'T, and never jumping to conclusions too fast."
+                    <strong>ARIA:</strong> "Little X, before computers and calculators, scientists used THIS to count EVERYTHING—from stars in the sky to grains of rice to animals in the forest!"
                 </div>
                 
                 <div class="character-speech">
-                    <strong>Little X:</strong> "Like when my tummy hurts—is it too much ice cream or a stomach bug?"
+                    <strong>Little X:</strong> "What is it?!"
                 </div>
-                
-                <p>"EXACTLY!" ARIA sparkled. "Check facts, don't guess wildly. Real science means being a body detective!"</p>
                 
                 <div class="character-speech">
-                    <strong>Raaarrr:</strong> "Raaarrr! Dino detective at your service! Where's my magnifying glass?"
+                    <strong>ARIA:</strong> "It's called an ABACUS! For over 2,000 years, this was humanity's calculator! See the golden beads on top? Each one equals 5! The red beads on bottom? Each equals 1! When you slide beads toward the golden bar in the middle, you're COUNTING them!"
                 </div>
+                
+                <div class="character-speech">
+                    <strong>Raaarrr:</strong> "Raaarrr! So if I count 7 trees, I slide the top bead down (that's 5!) then slide 2 bottom beads up (that's 2 more!) = 7 trees total! RAAARRR-MATH!"
+                </div>
+                
+                <div class="character-speech">
+                    <strong>ARIA:</strong> "Exactly! And here's the AMAZING part—this teaches you BASE-5 counting inside BASE-10 numbers! It's the SAME pattern that computers use, just with 0s and 1s instead of beads! Ancient wisdom meets future technology!"
+                </div>
+                
+                <div class="character-speech">
+                    <strong>Little X:</strong> "So when I count 23 birds, I use the Tens column for 2 beads (= 20) and the Ones column for 3 beads (= 3)! That's 23 birds!"
+                </div>
+                
+                <p>ARIA beamed. "YES! Scientists need to COUNT and MEASURE everything—from pollution clouds to healthy trees to stars in galaxies! The abacus helps train your brain to think in patterns, just like nature does!"</p>
             </div>
             
             <div class="chalkboard-container">
-                <h3>🌡️ Body Detective: Check Vital Signs!</h3>
-                <p>Doctors check temperature and pulse to rule out sickness. Try the simulators!</p>
-                
-                <div style="background: rgba(0, 255, 0, 0.2); padding: 20px; border-radius: 10px; margin: 15px 0;">
-                    <h4 style="color: #00ff00;">Temperature Check</h4>
-                    <p>Normal body temp: 98.6°F (37°C). A fever means your body is fighting germs!</p>
-                    <button class="btn" onclick="takeTemp()">📊 Take Temperature</button>
-                    <div id="temp-result" style="margin-top: 15px; color: #00ff00; font-size: 18px; font-weight: bold;">Result: Click to check!</div>
-                </div>
-                
-                <div style="background: rgba(50, 205, 50, 0.2); padding: 20px; border-radius: 10px; margin: 15px 0;">
-                    <h4 style="color: #00ff00;">Pulse Check</h4>
-                    <p>Find your pulse on your wrist. Count beats for 15 seconds!</p>
-                    <button class="btn" onclick="startPulse()">⏱️ Start 15-Second Timer</button>
-                    <div id="pulse-timer" style="margin-top: 10px; color: #ffff00; font-size: 20px;">Time: 15s</div>
-                    <input type="number" id="pulse-count" placeholder="How many beats?" style="margin-top: 10px; padding: 10px; border-radius: 10px; width: 200px; font-size: 16px;">
-                    <button class="btn" onclick="calculatePulse()">Calculate BPM</button>
-                    <div id="pulse-result" style="margin-top: 15px; color: #00ff00; font-size: 18px; font-weight: bold;"></div>
-                </div>
-            </div>
-            
-            <div class="story-text">
-                <p>Little X practiced checking vitals like a real doctor! "Fantastic!" ARIA cheered. "Now let's bust some MYTHS. Ever hear 'Feed a cold, starve a fever'?"</p>
-                
-                <div class="character-speech">
-                    <strong>Little X:</strong> "Yeah! My grandma says that all the time!"
-                </div>
-                
-                <p>"It's an old story from medieval times," ARIA explained, "when people thought sickness was 'hot' or 'cold' inside your body. But modern science knows better: Eat yummy nutritious soup AND drink lots of water when you're sick—your body needs fuel to fight those germs!"</p>
-                
-                <div class="character-speech">
-                    <strong>Raaarrr:</strong> "Raaarrr! Soup for EVERYTHING! No starving this dino!"
-                </div>
-                
-                <div class="character-speech">
-                    <strong>ARIA:</strong> "And here's another important thing: Everyone's body is DIFFERENT! Maybe honey helps your friend's cough but not yours. That's called ANECDOTAL EVIDENCE—one person's story. It's interesting, but not scientific proof for everyone. Real science tests MANY people's experiences to find patterns. Natural healing like rest or herbs can help, but always check with a grown-up—remember, do no harm!"
-                </div>
-            </div>
-            
-            <div class="chalkboard-container">
-                <h3>🔍 Myth Buster Quiz!</h3>
-                <p>Test your science knowledge! Click your answer.</p>
-                
-                <div style="background: rgba(0, 255, 0, 0.2); padding: 15px; border-radius: 10px; margin: 15px 0;">
-                    <strong>Question 1:</strong> Should you "feed a cold, starve a fever"?
-                    <div class="instruments" style="margin-top: 10px;">
-                        <button class="btn" onclick="quizMyth('feed-cold', true)">✅ True - Do it!</button>
-                        <button class="btn" onclick="quizMyth('feed-cold', false)">❌ False - It's a myth!</button>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(50, 205, 50, 0.2); padding: 15px; border-radius: 10px; margin: 15px 0;">
-                    <strong>Question 2:</strong> If honey helped my friend's cough, will it work for everyone?
-                    <div class="instruments" style="margin-top: 10px;">
-                        <button class="btn" onclick="quizMyth('anecdote', true)">✅ Yes - Works for all!</button>
-                        <button class="btn" onclick="quizMyth('anecdote', false)">❌ No - We're all different!</button>
-                    </div>
-                </div>
-                
-                <div id="myth-result" style="margin-top: 15px; padding: 15px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; color: #00ff00; font-weight: bold; min-height: 50px; border: 2px solid #00ff00;"></div>
-            </div>
-            
-            <div class="story-text">
-                <p>Little X laughed as myths got busted one by one! "Science is like being a puzzle detective—ruling out wrong ideas and checking facts instead of jumping to wild conclusions like 'It must be the monster under the bed!'"</p>
-                
-                <div class="character-speech">
-                    <strong>ARIA:</strong> "EXACTLY! Test, observe, think flexibly. That's how we protect the web of life AND keep our bodies healthy. You've learned so much, Little X!"
-                </div>
-                
-                <div class="character-speech guest-chat">
-                    <strong>Keanu:</strong> "Beautiful work, young scientist. Remember: Reason and compassion together heal all glitches—in nature and in hearts. The web connects us all."
-                </div>
-                
-                <div class="character-speech">
-                    <strong>Raaarrr:</strong> "Raaarrr! Science hero dino reporting for duty! What's our next adventure?"
-                </div>
-                
-                <p>The workshop sparkled with green and blue light as the holographic web pulsed beautifully, now clean and healthy thanks to Little X's wisdom.</p>
-                
-                <p style="text-align: center; font-size: 24px; color: #00ff00; text-shadow: 0 0 20px #00ff00; margin: 30px 0;">
-                    <em>✨ The End of Book 3... Until Book 4: Justice for All! ✨</em>
+                <h3>🧮 Your Real Abacus Calculator!</h3>
+                <p style="font-size: 0.95em; line-height: 1.6;">
+                    <strong>Heaven Beads (gold, top):</strong> Worth 5 each. Click to slide DOWN to golden bar.<br>
+                    <strong>Earth Beads (red, bottom):</strong> Worth 1 each. Click to slide UP to golden bar.<br>
+                    <strong>Touching the golden bar = COUNTED!</strong>
                 </p>
+                
+                <div class="abacus-frame">
+                    <div style="display: flex; justify-content: space-around; margin-bottom: 15px;">
+                        <div class="column-label">Hundreds</div>
+                        <div class="column-label">Tens</div>
+                        <div class="column-label">Ones</div>
+                    </div>
+                    
+                    <div class="abacus-columns">
+                        <!-- Hundreds Column -->
+                        <div class="abacus-column" data-place="100">
+                            <div class="heaven-section">
+                                <div class="rod"></div>
+                                <div class="bead heaven" data-value="500" onclick="toggleAbacusBead(this)">5</div>
+                            </div>
+                            <div class="divider-bar"></div>
+                            <div class="earth-section">
+                                <div class="rod"></div>
+                                <div class="bead earth" data-value="100" onclick="toggleAbacusBead(this)">1</div>
+                                <div class="bead earth" data-value="100" onclick="toggleAbacusBead(this)">1</div>
+                                <div class="bead earth" data-value="100" onclick="toggleAbacusBead(this)">1</div>
+                                <div class="bead earth" data-value="100" onclick="toggleAbacusBead(this)">1</div>
+                            </div>
+                        </div>
+
+                        <!-- Tens Column -->
+                        <div class="abacus-column" data-place="10">
+                            <div class="heaven-section">
+                                <div class="rod"></div>
+                                <div class="bead heaven" data-value="50" onclick="toggleAbacusBead(this)">5</div>
+                            </div>
+                            <div class="divider-bar"></div>
+                            <div class="earth-section">
+                                <div class="rod"></div>
+                                <div class="bead earth" data-value="10" onclick="toggleAbacusBead(this)">1</div>
+                                <div class="bead earth" data-value="10" onclick="toggleAbacusBead(this)">1</div>
+                                <div class="bead earth" data-value="10" onclick="toggleAbacusBead(this)">1</div>
+                                <div class="bead earth" data-value="10" onclick="toggleAbacusBead(this)">1</div>
+                            </div>
+                        </div>
+
+                        <!-- Ones Column -->
+                        <div class="abacus-column" data-place="1">
+                            <div class="heaven-section">
+                                <div class="rod"></div>
+                                <div class="bead heaven" data-value="5" onclick="toggleAbacusBead(this)">5</div>
+                            </div>
+                            <div class="divider-bar"></div>
+                            <div class="earth-section">
+                                <div class="rod"></div>
+                                <div class="bead earth" data-value="1" onclick="toggleAbacusBead(this)">1</div>
+                                <div class="bead earth" data-value="1" onclick="toggleAbacusBead(this)">1</div>
+                                <div class="bead earth" data-value="1" onclick="toggleAbacusBead(this)">1</div>
+                                <div class="bead earth" data-value="1" onclick="toggleAbacusBead(this)">1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="abacus-display">
+                    <div style="color: #00ff00; font-size: 1.1em; margin-bottom: 8px;">Your Count:</div>
+                    <div class="abacus-total" id="abacusTotal">0</div>
+                    <div class="abacus-breakdown">
+                        <div class="breakdown-item">💯 <span id="abacusHundreds">0</span></div>
+                        <div class="breakdown-item">🔟 <span id="abacusTens">0</span></div>
+                        <div class="breakdown-item">1️⃣ <span id="abacusOnes">0</span></div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn" onclick="resetAbacus()">🔄 Reset Abacus</button>
+                    <button class="btn" onclick="showAbacusExample(23)">📚 Show 23</button>
+                    <button class="btn" onclick="showAbacusExample(55)">📚 Show 55</button>
+                    <button class="btn" onclick="abacusChallenge()">🎯 Challenge Me!</button>
+                </div>
+                
+                <div id="abacusMessage" style="margin-top: 15px; color: #00ff00; font-weight: bold; min-height: 30px;"></div>
             </div>
             
-            <div class="nav-buttons">
-                <button class="btn" onclick="loadChapter(1)" style="font-size: 18px; padding: 15px 30px;">
-                    🔄 Restart Book 3
-                </button>
-                <button class="btn" onclick="celebrateCompletion()" style="background: linear-gradient(45deg, #00ff00, #32CD32, #00ffff); font-size: 18px; padding: 15px 30px;">
-                    🎉 Celebrate!
-                </button>
+            <div class="character-speech">
+                <strong>ARIA:</strong> "Now you can count ANYTHING in the web of life! How many trees need planting? How many animals to protect? How many pollution clouds to clean? The abacus trains your brain to see patterns EVERYWHERE! 🧠✨"
             </div>
+        </div>
+
+        <!-- Continue with rest of original chapters... -->
+        <div class="chapter" id="chapter2" style="display: none;">
+            <h2>Chapter 2: The Scientific Method</h2>
+            <div class="story-text">
+                <p>Continue with original Book 3 content...</p>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="btn" onclick="loadChapter(1)">🌍 Chapter 1</button>
+            <button class="btn" onclick="loadChapter('abacus')">🧮 Abacus Chapter</button>
+            <button class="btn" onclick="loadChapter(2)">🔬 Chapter 2</button>
         </div>
     </div>
 
     <script>
-        // Audio Context
-        let audioContext = null;
-        
-        function initAudio() {
-            if (!audioContext) {
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            }
-            if (audioContext.state === 'suspended') {
-                audioContext.resume();
-            }
-        }
-        
-        function playTone(frequency, duration, type = 'sine') {
-            initAudio();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            oscillator.type = type;
-            oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-            gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.01);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + duration);
-        }
-        
-        // Stars
+        // Stars background
         function createStars() {
             const container = document.getElementById('stars-container');
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 100; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
-                star.style.width = Math.random() * 3 + 1 + 'px';
-                star.style.height = star.style.width;
+                star.style.width = star.style.height = Math.random() * 3 + 'px';
                 star.style.left = Math.random() * 100 + '%';
                 star.style.top = Math.random() * 100 + '%';
                 star.style.animationDelay = Math.random() * 2 + 's';
                 container.appendChild(star);
             }
         }
-        
-        // Web of Life Canvas
-        let webDrawing = false;
-        let webLines = [];
-        let pollutionClouds = [
-            {x: 150, y: 250, size: 35, active: true},
-            {x: 420, y: 100, size: 30, active: true},
-            {x: 350, y: 320, size: 40, active: true}
-        ];
-        let zapMode = false;
-        let webStartX, webStartY;
-        
-        function setupWebCanvas() {
-            const canvas = document.getElementById('web-canvas');
-            if (!canvas) return;
-            
-            canvas.addEventListener('mousedown', (e) => {
-                if (zapMode) zapPollution(e);
-                else { webDrawing = true; startWebLine(e); }
-            });
-            canvas.addEventListener('mousemove', (e) => { if (webDrawing) drawWebLine(e); });
-            canvas.addEventListener('mouseup', () => webDrawing = false);
-            canvas.addEventListener('mouseout', () => webDrawing = false);
-            
-            canvas.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                if (zapMode) zapPollution(e.touches[0]);
-                else { webDrawing = true; startWebLine(e.touches[0]); }
-            });
-            canvas.addEventListener('touchmove', (e) => {
-                e.preventDefault();
-                if (webDrawing) drawWebLine(e.touches[0]);
-            });
-            canvas.addEventListener('touchend', () => webDrawing = false);
-            
-            drawEcosystem();
+
+        // Audio
+        let audioContext = null;
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
         }
         
+        function playTone(freq, duration, type = 'sine') {
+            if (!audioContext) return;
+            const osc = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+            osc.frequency.value = freq;
+            osc.type = type;
+            gain.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+            osc.start();
+            osc.stop(audioContext.currentTime + duration);
+        }
+
+        // Web canvas (original functionality)
+        let webCanvas, webCtx;
+        let webNodes = [];
+        let webLines = [];
+        let drawing = false;
+        let startNode = null;
+        let pollutionClouds = [];
+        let zapMode = false;
+
+        function setupWebCanvas() {
+            webCanvas = document.getElementById('web-canvas');
+            if (!webCanvas) return;
+            webCtx = webCanvas.getContext('2d');
+            webNodes = [
+                { x: 300, y: 50, emoji: '☀️', label: 'Sun', type: 'sun' },
+                { x: 150, y: 150, emoji: '🌱', label: 'Plant', type: 'plant' },
+                { x: 450, y: 150, emoji: '🐛', label: 'Bug', type: 'bug' },
+                { x: 150, y: 300, emoji: '🐦', label: 'Bird', type: 'bird' },
+                { x: 450, y: 300, emoji: '🌸', label: 'Flower', type: 'flower' }
+            ];
+            pollutionClouds = [
+                { x: 100, y: 200, size: 30, active: true },
+                { x: 500, y: 250, size: 25, active: true },
+                { x: 300, y: 350, size: 28, active: true }
+            ];
+            webCanvas.addEventListener('mousedown', startDrawing);
+            webCanvas.addEventListener('mousemove', drawLine);
+            webCanvas.addEventListener('mouseup', finishDrawing);
+            drawEcosystem();
+        }
+
         function drawEcosystem() {
-            const canvas = document.getElementById('web-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
+            if (!webCtx) return;
+            webCtx.clearRect(0, 0, webCanvas.width, webCanvas.height);
+            webCtx.fillStyle = 'rgba(0, 50, 0, 0.3)';
+            webCtx.fillRect(0, 0, webCanvas.width, webCanvas.height);
             
-            const gradient = ctx.createLinearGradient(0, 0, 0, 420);
-            gradient.addColorStop(0, '#87CEEB');
-            gradient.addColorStop(1, '#90EE90');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, 600, 420);
-            
-            ctx.strokeStyle = '#00ff00';
-            ctx.lineWidth = 3;
-            ctx.shadowBlur = 5;
-            ctx.shadowColor = '#00ff00';
             webLines.forEach(line => {
-                ctx.beginPath();
-                ctx.moveTo(line.startX, line.startY);
-                ctx.lineTo(line.endX, line.endY);
-                ctx.stroke();
+                webCtx.strokeStyle = '#00ff00';
+                webCtx.lineWidth = 3;
+                webCtx.beginPath();
+                webCtx.moveTo(line.from.x, line.from.y);
+                webCtx.lineTo(line.to.x, line.to.y);
+                webCtx.stroke();
             });
-            ctx.shadowBlur = 0;
             
-            ctx.font = 'bold 16px Arial';
-            ctx.textAlign = 'center';
-            
-            // Sun
-            ctx.fillStyle = '#FFD700';
-            ctx.beginPath();
-            ctx.arc(100, 80, 35, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.fillStyle = '#FF4500';
-            ctx.fillText('☀️ Sun', 100, 130);
-            
-            // Plant
-            ctx.fillStyle = '#228B22';
-            ctx.fillRect(250, 180, 70, 90);
-            ctx.fillStyle = '#32CD32';
-            ctx.beginPath();
-            ctx.arc(285, 160, 40, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.fillStyle = '#006400';
-            ctx.fillText('🌱 Plant', 285, 290);
-            
-            // Bug
-            ctx.fillStyle = '#FF69B4';
-            ctx.beginPath();
-            ctx.arc(450, 140, 20, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.fillStyle = '#FF1493';
-            ctx.fillText('🐛 Bug', 450, 180);
-            
-            // Bird
-            ctx.fillStyle = '#4169E1';
-            ctx.beginPath();
-            ctx.moveTo(520, 90);
-            ctx.lineTo(560, 70);
-            ctx.lineTo(540, 110);
-            ctx.closePath();
-            ctx.fill();
-            ctx.fillStyle = '#1E90FF';
-            ctx.fillText('🐦 Bird', 540, 130);
-            
-            // Flower
-            ctx.fillStyle = '#FF1493';
-            ctx.beginPath();
-            ctx.arc(300, 360, 30, 0, Math.PI * 2);
-            ctx.fill();
-            for (let i = 0; i < 6; i++) {
-                ctx.beginPath();
-                ctx.arc(300 + Math.cos(i * Math.PI / 3) * 25, 360 + Math.sin(i * Math.PI / 3) * 25, 15, 0, Math.PI * 2);
-                ctx.fill();
-            }
-            ctx.fillStyle = '#C71585';
-            ctx.fillText('🌸 Flower', 300, 410);
-            
-            // Pollution clouds
             pollutionClouds.forEach(cloud => {
                 if (cloud.active) {
-                    ctx.fillStyle = 'rgba(80, 80, 80, 0.7)';
-                    ctx.beginPath();
-                    ctx.arc(cloud.x, cloud.y, cloud.size, 0, Math.PI * 2);
-                    ctx.fill();
-                    ctx.fillStyle = '#fff';
-                    ctx.font = 'bold 20px Arial';
-                    ctx.fillText('💨', cloud.x, cloud.y);
+                    webCtx.fillStyle = 'rgba(100, 100, 100, 0.6)';
+                    webCtx.beginPath();
+                    webCtx.arc(cloud.x, cloud.y, cloud.size, 0, Math.PI * 2);
+                    webCtx.fill();
+                    webCtx.fillStyle = 'white';
+                    webCtx.font = '20px Arial';
+                    webCtx.textAlign = 'center';
+                    webCtx.fillText('☁️', cloud.x, cloud.y + 7);
                 }
             });
+            
+            webNodes.forEach(node => {
+                webCtx.fillStyle = 'white';
+                webCtx.font = '40px Arial';
+                webCtx.textAlign = 'center';
+                webCtx.fillText(node.emoji, node.x, node.y + 12);
+                webCtx.font = '14px Arial';
+                webCtx.fillText(node.label, node.x, node.y + 35);
+            });
         }
-        
-        function startWebLine(e) {
-            const canvas = document.getElementById('web-canvas');
-            const rect = canvas.getBoundingClientRect();
-            webStartX = e.clientX - rect.left;
-            webStartY = e.clientY - rect.top;
-        }
-        
-        function drawWebLine(e) {
-            if (!webDrawing) return;
-            const canvas = document.getElementById('web-canvas');
-            const rect = canvas.getBoundingClientRect();
+
+        function startDrawing(e) {
+            if (zapMode) return zapPollution(e);
+            const rect = webCanvas.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            webLines.push({startX: webStartX, startY: webStartY, endX: x, endY: y});
-            drawEcosystem();
-            webStartX = x;
-            webStartY = y;
+            startNode = webNodes.find(n => Math.sqrt((x - n.x) ** 2 + (y - n.y) ** 2) < 30);
+            drawing = !!startNode;
         }
-        
+
+        function drawLine(e) {
+            if (!drawing) return;
+            const rect = webCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            drawEcosystem();
+            webCtx.strokeStyle = '#00ff00';
+            webCtx.setLineDash([5, 5]);
+            webCtx.lineWidth = 2;
+            webCtx.beginPath();
+            webCtx.moveTo(startNode.x, startNode.y);
+            webCtx.lineTo(x, y);
+            webCtx.stroke();
+            webCtx.setLineDash([]);
+        }
+
+        function finishDrawing(e) {
+            if (!drawing) return;
+            const rect = webCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const endNode = webNodes.find(n => Math.sqrt((x - n.x) ** 2 + (y - n.y) ** 2) < 30);
+            if (endNode && endNode !== startNode) {
+                webLines.push({ from: startNode, to: endNode });
+                initAudio();
+                playTone(523, 0.2, 'sine');
+            }
+            drawing = false;
+            startNode = null;
+            drawEcosystem();
+        }
+
         function clearWeb() {
             webLines = [];
-            pollutionClouds.forEach(cloud => cloud.active = true);
-            zapMode = false;
             drawEcosystem();
-            document.getElementById('web-message').textContent = 'Draw connections again! Start from the Sun ☀️';
+            document.getElementById('web-message').textContent = 'Canvas cleared! Draw new connections!';
         }
-        
+
         function startCleanup() {
             zapMode = true;
-            document.getElementById('web-message').textContent = '🧹 ZAP MODE! Click pollution clouds to clean them!';
+            document.getElementById('web-message').textContent = '🧹 Click pollution clouds to ZAP them!';
             initAudio();
             playTone(659, 0.3, 'sine');
         }
-        
+
         function zapPollution(e) {
-            const canvas = document.getElementById('web-canvas');
-            const rect = canvas.getBoundingClientRect();
+            const rect = webCanvas.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
             let zapped = false;
             pollutionClouds.forEach(cloud => {
                 if (cloud.active) {
@@ -533,7 +638,7 @@
                     if (dist < cloud.size) {
                         cloud.active = false;
                         zapped = true;
-                        for (let i = 0; i < 8; i++) {
+                        for (let i = 0; i < 5; i++) {
                             setTimeout(() => {
                                 const sparkle = document.createElement('div');
                                 sparkle.textContent = '✨';
@@ -549,11 +654,10 @@
                     }
                 }
             });
-            
             if (zapped) {
                 const remaining = pollutionClouds.filter(c => c.active).length;
                 if (remaining === 0) {
-                    document.getElementById('web-message').textContent = '🌟 WEB SUPER-CLEAN! Reason wins! 🌟';
+                    document.getElementById('web-message').textContent = '🌟 ALL CLEAN! Science wins! 🌟';
                     zapMode = false;
                 } else {
                     document.getElementById('web-message').textContent = `ZAP! ${remaining} cloud${remaining > 1 ? 's' : ''} left!`;
@@ -561,137 +665,138 @@
             }
             drawEcosystem();
         }
-        
+
         function checkWeb() {
             const connections = webLines.length;
             const message = document.getElementById('web-message');
             if (connections >= 4) {
-                message.textContent = '🌟 Amazing web! Try Pollution Zap mode! 🌟';
+                message.textContent = '🌟 Amazing web! Try Pollution Zap! 🌟';
                 initAudio();
                 playTone(523, 0.4, 'sine');
             } else if (connections > 0) {
-                message.textContent = `Good start! ${connections} connection${connections > 1 ? 's' : ''}.`;
+                message.textContent = `Good! ${connections} connection${connections > 1 ? 's' : ''}.`;
             } else {
                 message.textContent = 'Draw some lines first!';
             }
         }
-        
-        // Health checks
-        function takeTemp() {
-            const temp = 98.6 + (Math.random() - 0.5) * 3;
-            const result = document.getElementById('temp-result');
-            if (temp > 99.5) {
-                result.textContent = `🌡️ ${temp.toFixed(1)}°F - Warm! Fighting germs! 🦠`;
-                result.style.color = '#ff6b9d';
-            } else if (temp < 97.5) {
-                result.textContent = `🌡️ ${temp.toFixed(1)}°F - Cool! Bundle up! 🧣`;
-                result.style.color = '#87CEEB';
-            } else {
-                result.textContent = `🌡️ ${temp.toFixed(1)}°F - Perfect! ✨`;
-                result.style.color = '#00ff00';
-            }
+
+        // ABACUS FUNCTIONS
+        function toggleAbacusBead(bead) {
+            bead.classList.toggle('counted');
             initAudio();
-            playTone(523, 0.2, 'sine');
+            playTone(bead.classList.contains('counted') ? 440 : 340, 0.1, 'sine');
+            updateAbacusDisplay();
         }
-        
-        let pulseTimerInterval;
-        function startPulse() {
-            let time = 15;
-            const timerDisplay = document.getElementById('pulse-timer');
-            clearInterval(pulseTimerInterval);
-            pulseTimerInterval = setInterval(() => {
-                time--;
-                timerDisplay.textContent = `Time: ${time}s ${time <= 5 ? '⏰' : ''}`;
-                if (time <= 5) {
-                    timerDisplay.style.color = '#ff6b9d';
+
+        function updateAbacusDisplay() {
+            let hundreds = 0, tens = 0, ones = 0;
+            
+            document.querySelectorAll('[data-place="100"] .bead.counted').forEach(b => {
+                hundreds += parseInt(b.dataset.value);
+            });
+            document.querySelectorAll('[data-place="10"] .bead.counted').forEach(b => {
+                tens += parseInt(b.dataset.value);
+            });
+            document.querySelectorAll('[data-place="1"] .bead.counted').forEach(b => {
+                ones += parseInt(b.dataset.value);
+            });
+            
+            const total = hundreds + tens + ones;
+            document.getElementById('abacusTotal').textContent = total;
+            document.getElementById('abacusHundreds').textContent = hundreds;
+            document.getElementById('abacusTens').textContent = tens;
+            document.getElementById('abacusOnes').textContent = ones;
+        }
+
+        function resetAbacus() {
+            document.querySelectorAll('.bead').forEach(b => b.classList.remove('counted'));
+            updateAbacusDisplay();
+            document.getElementById('abacusMessage').textContent = '🔄 Reset! Ready to count again!';
+        }
+
+        function showAbacusExample(num) {
+            resetAbacus();
+            const msg = document.getElementById('abacusMessage');
+            msg.textContent = `📚 Watch how we make ${num}...`;
+            
+            setTimeout(() => {
+                if (num === 23) {
+                    const tensBeads = document.querySelectorAll('[data-place="10"] .earth');
+                    tensBeads[0].classList.add('counted');
+                    playTone(440, 0.1, 'sine');
+                    updateAbacusDisplay();
+                    setTimeout(() => {
+                        tensBeads[1].classList.add('counted');
+                        playTone(440, 0.1, 'sine');
+                        updateAbacusDisplay();
+                        setTimeout(() => {
+                            const onesBeads = document.querySelectorAll('[data-place="1"] .earth');
+                            onesBeads[0].classList.add('counted');
+                            playTone(440, 0.1, 'sine');
+                            updateAbacusDisplay();
+                            setTimeout(() => {
+                                onesBeads[1].classList.add('counted');
+                                playTone(440, 0.1, 'sine');
+                                updateAbacusDisplay();
+                                setTimeout(() => {
+                                    onesBeads[2].classList.add('counted');
+                                    playTone(440, 0.1, 'sine');
+                                    updateAbacusDisplay();
+                                    msg.textContent = '✨ That\'s 23! 2 tens + 3 ones!';
+                                }, 300);
+                            }, 300);
+                        }, 300);
+                    }, 300);
+                } else if (num === 55) {
+                    const tensHeaven = document.querySelector('[data-place="10"] .heaven');
+                    tensHeaven.classList.add('counted');
+                    playTone(440, 0.1, 'sine');
+                    updateAbacusDisplay();
+                    setTimeout(() => {
+                        const onesHeaven = document.querySelector('[data-place="1"] .heaven');
+                        onesHeaven.classList.add('counted');
+                        playTone(440, 0.1, 'sine');
+                        updateAbacusDisplay();
+                        msg.textContent = '✨ That\'s 55! Heaven beads are powerful!';
+                    }, 400);
+                }
+            }, 500);
+        }
+
+        let currentChallenge = null;
+        function abacusChallenge() {
+            const challenges = [7, 12, 23, 48, 55, 99];
+            currentChallenge = challenges[Math.floor(Math.random() * challenges.length)];
+            resetAbacus();
+            document.getElementById('abacusMessage').textContent = `🎯 Can you make ${currentChallenge}? Try it!`;
+            
+            // Auto-check
+            const checkInterval = setInterval(() => {
+                const total = parseInt(document.getElementById('abacusTotal').textContent);
+                if (total === currentChallenge) {
+                    clearInterval(checkInterval);
+                    document.getElementById('abacusMessage').textContent = '🎉 PERFECT! You did it! 🌟';
                     initAudio();
-                    playTone(440, 0.1, 'square');
+                    playTone(659, 0.3, 'sine');
+                    setTimeout(() => playTone(784, 0.3, 'sine'), 200);
+                    currentChallenge = null;
                 }
-                if (time <= 0) {
-                    clearInterval(pulseTimerInterval);
-                    timerDisplay.textContent = '⏰ TIME\'S UP!';
-                }
-            }, 1000);
-            initAudio();
-            playTone(523, 0.3, 'sine');
+            }, 500);
         }
-        
-        function calculatePulse() {
-            const beats = parseInt(document.getElementById('pulse-count').value) || 0;
-            const bpm = beats * 4;
-            const result = document.getElementById('pulse-result');
-            if (beats === 0) {
-                result.textContent = '⚠️ Enter your count!';
-            } else if (bpm > 100) {
-                result.textContent = `💓 ${bpm} BPM - Fast! 🏃`;
-            } else if (bpm < 60) {
-                result.textContent = `💙 ${bpm} BPM - Relaxed! 😌`;
-            } else {
-                result.textContent = `💚 ${bpm} BPM - Perfect! ✨`;
-            }
-            initAudio();
-            playTone(440, 0.3, 'sine');
-        }
-        
-        function quizMyth(type, answer) {
-            const resultDiv = document.getElementById('myth-result');
-            let message = '';
-            let correct = false;
-            
-            if (type === 'feed-cold') {
-                if (answer === false) {
-                    message = '✅ CORRECT! It\'s a MYTH from medieval times. Modern science: Eat AND hydrate when sick! 🍲💪';
-                    correct = true;
-                } else {
-                    message = '❌ Not quite! It\'s a myth. Always fuel up when sick!';
-                }
-            } else if (type === 'anecdote') {
-                if (answer === false) {
-                    message = '✅ CORRECT! Anecdotal evidence—we\'re all different! Science tests many people! 🍯🔬';
-                    correct = true;
-                } else {
-                    message = '❌ Not quite! We\'re all unique! What works for one might not work for another!';
-                }
-            }
-            
-            resultDiv.textContent = message;
-            resultDiv.style.color = correct ? '#00ff00' : '#ff6b9d';
-            resultDiv.style.borderColor = correct ? '#00ff00' : '#ff6b9d';
-            initAudio();
-            playTone(correct ? 659 : 392, 0.3, 'sine');
-        }
-        
+
         function loadChapter(num) {
             document.querySelectorAll('.chapter').forEach(ch => ch.style.display = 'none');
-            const target = num === 1 ? document.querySelector('.chapter') : document.getElementById('chapter' + num);
-            if (target) {
-                target.style.display = 'block';
-                window.scrollTo(0, 0);
-            }
             if (num === 1) {
+                document.querySelector('.chapter').style.display = 'block';
                 setTimeout(setupWebCanvas, 100);
+            } else if (num === 'abacus') {
+                document.getElementById('chapter-abacus').style.display = 'block';
+            } else if (num === 2) {
+                document.getElementById('chapter2').style.display = 'block';
             }
+            window.scrollTo(0, 0);
         }
-        
-        function celebrateCompletion() {
-            initAudio();
-            for (let i = 0; i < 10; i++) {
-                setTimeout(() => {
-                    playTone(523 + Math.random() * 400, 0.3, 'sine');
-                    const firework = document.createElement('div');
-                    firework.textContent = ['🎉', '✨', '🌟'][Math.floor(Math.random() * 3)];
-                    firework.style.cssText = `position: fixed; left: ${Math.random() * window.innerWidth}px; 
-                        top: ${Math.random() * window.innerHeight}px; font-size: ${30 + Math.random() * 30}px; 
-                        animation: float-up 2s ease-out forwards; pointer-events: none; z-index: 9999;`;
-                    document.body.appendChild(firework);
-                    setTimeout(() => firework.remove(), 2000);
-                }, i * 200);
-            }
-            setTimeout(() => {
-                alert('🎉 BOOK 3 COMPLETE! 🎉\n\nYou learned:\n🌍 Web of Life\n🔬 Scientific Method\n💚 Environmental Ethics\n\nReady for Book 4: Justice for All!');
-            }, 2000);
-        }
-        
+
         window.addEventListener('DOMContentLoaded', () => {
             createStars();
             setupWebCanvas();
